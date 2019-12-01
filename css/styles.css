@@ -32,6 +32,7 @@ header h1 {
     font-size: 1.25em;
     color: rgba(50, 50, 50, 0.9);
     margin-top: 35px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .search-input {
@@ -102,6 +103,10 @@ header h1 {
 
 .card-info-container {
     text-align: left;
+}
+
+.card-info-container, .card-img-container{
+    pointer-events: none;
 }
 
 .card-name {

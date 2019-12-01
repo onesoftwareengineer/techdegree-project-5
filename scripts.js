@@ -65,6 +65,7 @@ function addSearchFunctionality() {
     document.getElementById('search-input').addEventListener('input', (event)=>{
         displayContacts(searchForContacts(event.target.value));
     });
+    document.getElementById('#search-submit').addEventListener('click', (e) => e.target.preventDefault());
 };   
 
 //function that searches the fetchedContactsArray for certain names, returns array of matched people, takes a string as an argument when it is called

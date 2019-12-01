@@ -118,6 +118,7 @@ function displayModal(person) {
 function displayNextPersonInModal(next) {
     const currentName = document.querySelector('.modal-name').innerText;
     const currentNameIndex = searchForPerson(currentName);
+    //if user clicked on next button next person index is incremented otherwise it means user clicked on prev so it's decremented
     const nextPersonIndex = next === 'next' ? currentNameIndex + 1 : currentNameIndex - 1;
     if(nextPersonIndex < fetchedContactsArray.length && nextPersonIndex >= 0) {
         document.querySelector('#modal-next').style.display = 'inline-block';

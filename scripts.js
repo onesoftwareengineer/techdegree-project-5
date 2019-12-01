@@ -103,7 +103,7 @@ function displayModal(person) {
     // event listener that triggers modal click on next or previous person 
     document.querySelector('#modal-next').addEventListener('click', () => displayNextPersonInModal('next') );
     document.querySelector('#modal-prev').addEventListener('click', () => displayNextPersonInModal('prev') );
-    // event listener that triggers modal next or prev person depending on left and right arrow keys from keyboard
+    // event listener that triggers modal next or prev person depending on left and right arrow keys from keyboard if buttons are not hidden
     document.addEventListener('keydown', (e) => {
         if(e.keyCode === 39 && document.querySelector('#modal-next').style.display !== 'none') {
             displayNextPersonInModal('next');
@@ -118,26 +118,6 @@ function displayModal(person) {
 function displayNextPersonInModal(next) {
     const currentName = document.querySelector('.modal-name').innerText;
     let currentNameIndex = searchForPerson(currentName);
-    //if user clicked on next button next person index is incremented otherwise it means user clicked on prev so it's decremented
-    // const nextPersonIndex = next === 'next' ? currentNameIndex + 1 : currentNameIndex - 1;
-    // if(nextPersonIndex < fetchedContactsArray.length && nextPersonIndex >= 0) {
-    //     displayPersonInModal(fetchedContactsArray[nextPersonIndex]);
-    // }
-    // //shows or hides next button depending if it's the last user or not
-    // if(nextPersonIndex === fetchedContactsArray.length) {
-    //     document.querySelector('#modal-next').style.display = 'none';
-    // }
-    // else if(document.querySelector('#modal-next').style.display === 'none') {
-    //     document.querySelector('#modal-next').style.display = 'inline-block';
-    // }
-    // //shows or hides prev button depending if it's the first user or not
-    // if(nextPersonIndex === 1) {
-    //     document.querySelector('#modal-prev').style.display = 'none';        
-    // }
-    // else {
-    //     document.querySelector('#modal-prev').style.display = 'inline-block';
-    // }
-
     //checks if user clicked on next button from modal and if curent person index if different from last element of people array
     if(next === 'next' && currentNameIndex !== fetchedContactsArray.length ) {
         const nextPersonIndex = currentNameIndex + 1;

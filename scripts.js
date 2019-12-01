@@ -105,10 +105,10 @@ function displayModal(person) {
     document.querySelector('#modal-prev').addEventListener('click', () => displayNextPersonInModal('prev') );
     // event listener that triggers modal next or prev person depending on left and right arrow keys from keyboard
     document.addEventListener('keydown', (e) => {
-        if(e.keyCode === 39) {
+        if(e.keyCode === 39 && document.querySelector('#modal-next').style.display !== 'none') {
             displayNextPersonInModal('next');
         }
-        else if(e.keyCode === 37) {
+        else if(e.keyCode === 37 && document.querySelector('#modal-prev').style.display !== 'none') {
             displayNextPersonInModal('prev');
         }
     });
@@ -117,7 +117,7 @@ function displayModal(person) {
 // function that displays next or prev person in modal, it takes 'next' or 'prev' as an argument when it is called
 function displayNextPersonInModal(next) {
     const currentName = document.querySelector('.modal-name').innerText;
-    const currentNameIndex = searchForPerson(currentName);
+    let currentNameIndex = searchForPerson(currentName);
     //if user clicked on next button next person index is incremented otherwise it means user clicked on prev so it's decremented
     // const nextPersonIndex = next === 'next' ? currentNameIndex + 1 : currentNameIndex - 1;
     // if(nextPersonIndex < fetchedContactsArray.length && nextPersonIndex >= 0) {
@@ -142,23 +142,25 @@ function displayNextPersonInModal(next) {
     if(next === 'next' && currentNameIndex !== fetchedContactsArray.length ) {
         const nextPersonIndex = currentNameIndex + 1;
         displayPersonInModal(fetchedContactsArray[nextPersonIndex]);
-        if(nextPersonIndex === (fetchedContactsArray.length - 1) ) {
-            document.querySelector('#modal-next').style.display = 'none';
-        } else {
-            document.querySelector('#modal-next').style.display = 'inline-block';
-        }
+        currentNameIndex = nextPersonIndex;
     }
     //checks if user clicked on prev button from modal and if current person index is different from zero
     else if(next === 'prev' && currentNameIndex !== 0 ) {
         const prevPersonIndex = currentNameIndex - 1;
         displayPersonInModal(fetchedContactsArray[prevPersonIndex]);
-        if(prevPersonIndex === 0 ) {
-            document.querySelector('#modal-next').style.display = 'none';
-        } else {
-            document.querySelector('#modal-next').style.display = 'inline-block';
-        }
+        currentNameIndex = prevPersonIndex;
     }
-
+    //checks weather to hide prev or next or show both
+    if(currentNameIndex === 0) {
+        document.querySelector('#modal-prev').style.display = 'none';
+    }
+    else if(currentNameIndex === (fetchedContactsArray.length - 1) ) {
+        document.querySelector('#modal-next').style.display = 'none';
+    }
+    else {
+        document.querySelector('#modal-prev').style.display = 'inline-block';        
+        document.querySelector('#modal-next').style.display = 'inline-block';
+    }
 };
 
 // function that returns index in the fetchedContactsArray of the searched person, takes a persons full name (first and last) as an argument when it is called 

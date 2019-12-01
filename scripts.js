@@ -119,18 +119,46 @@ function displayNextPersonInModal(next) {
     const currentName = document.querySelector('.modal-name').innerText;
     const currentNameIndex = searchForPerson(currentName);
     //if user clicked on next button next person index is incremented otherwise it means user clicked on prev so it's decremented
-    const nextPersonIndex = next === 'next' ? currentNameIndex + 1 : currentNameIndex - 1;
-    if(nextPersonIndex < fetchedContactsArray.length && nextPersonIndex >= 0) {
-        document.querySelector('#modal-next').style.display = 'inline-block';
-        document.querySelector('#modal-prev').style.display = 'inline-block';
+    // const nextPersonIndex = next === 'next' ? currentNameIndex + 1 : currentNameIndex - 1;
+    // if(nextPersonIndex < fetchedContactsArray.length && nextPersonIndex >= 0) {
+    //     displayPersonInModal(fetchedContactsArray[nextPersonIndex]);
+    // }
+    // //shows or hides next button depending if it's the last user or not
+    // if(nextPersonIndex === fetchedContactsArray.length) {
+    //     document.querySelector('#modal-next').style.display = 'none';
+    // }
+    // else if(document.querySelector('#modal-next').style.display === 'none') {
+    //     document.querySelector('#modal-next').style.display = 'inline-block';
+    // }
+    // //shows or hides prev button depending if it's the first user or not
+    // if(nextPersonIndex === 1) {
+    //     document.querySelector('#modal-prev').style.display = 'none';        
+    // }
+    // else {
+    //     document.querySelector('#modal-prev').style.display = 'inline-block';
+    // }
+
+    //checks if user clicked on next button from modal and if curent person index if different from last element of people array
+    if(next === 'next' && currentNameIndex !== fetchedContactsArray.length ) {
+        const nextPersonIndex = currentNameIndex + 1;
         displayPersonInModal(fetchedContactsArray[nextPersonIndex]);
+        if(nextPersonIndex === (fetchedContactsArray.length - 1) ) {
+            document.querySelector('#modal-next').style.display = 'none';
+        } else {
+            document.querySelector('#modal-next').style.display = 'inline-block';
+        }
     }
-    else if(nextPersonIndex >= fetchedContactsArray.length) {
-        document.querySelector('#modal-next').style.display = 'none';
+    //checks if user clicked on prev button from modal and if current person index is different from zero
+    else if(next === 'prev' && currentNameIndex !== 0 ) {
+        const prevPersonIndex = currentNameIndex - 1;
+        displayPersonInModal(fetchedContactsArray[prevPersonIndex]);
+        if(prevPersonIndex === 0 ) {
+            document.querySelector('#modal-next').style.display = 'none';
+        } else {
+            document.querySelector('#modal-next').style.display = 'inline-block';
+        }
     }
-    else if(nextPersonIndex < 0) {
-        document.querySelector('#modal-prev').style.display = 'none';        
-    }
+
 };
 
 // function that returns index in the fetchedContactsArray of the searched person, takes a persons full name (first and last) as an argument when it is called 

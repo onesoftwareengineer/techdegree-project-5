@@ -8,7 +8,7 @@ Javascript (Fetch API), HTML, CSS
 ![image](https://raw.githubusercontent.com/onesoftwareengineer/techdegree-project-5/master/screenshot1.JPG)
 *address book*
 
-![image](https://raw.githubusercontent.com/onesoftwareengineer/techdegree-project-5/master/screenshot3.JPG)
+![image](https://raw.githubusercontent.com/onesoftwareengineer/techdegree-project-5/master/screenshot2.JPG)
 *dynamic search feature*
 
 ![image](https://raw.githubusercontent.com/onesoftwareengineer/techdegree-project-5/master/screenshot3.JPG)

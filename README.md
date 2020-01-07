@@ -1,7 +1,11 @@
-# techdegree-project-5
- Using APIs to build an address book
+## API Address Book
 
- Communicating with APIs allows you to work with microservices and with vast databases to build useful tools and relevant information quickly and easily. You can build utilities, games, infographics, and more. You can also integrate, display, and analyze social media and large data sets without having to create and curate them yourself.
+## Technologies
+
+## Screenshots
+
+## More on how it works
+Communicating with APIs allows you to work with microservices and with vast databases to build useful tools and relevant information quickly and easily. You can build utilities, games, infographics, and more. You can also integrate, display, and analyze social media and large data sets without having to create and curate them yourself.
 
 For this project, you'll build an app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world. They need a smart way for employees to share contact information with each other.
 
@@ -12,8 +16,3 @@ You’ll request a JSON object from the API and parse the data so that 12 employ
 You may use jQuery with this project, but other frameworks, libraries or plugins are not permitted. While there are plugins that can help with the creation of a gallery and modal setup, it is important for developers to be able to understand how tools like that work "under the hood". So you'll need to write all your own JS or jQuery to create the necessary functionality for this project.
 
 After building this project, you'll have yet another excellent portfolio piece to show off and demonstrate your incredible skills, which will now include working with public APIs, making API requests, and asynchronously handling the data that will be returned from your requests and displayed in an app.
-
-style changes not included in the brief:
-first page h1 font-family changed to:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-.card-name class font-family change to:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-.card-name class color changed to:  dimgray;
